@@ -1,6 +1,6 @@
 const skillContainer = document.getElementById('skillContainer');
 
-function addSkill(initialData = { name: '', timing: '', target: '', range: '', effect: '' }) {
+function addSkill(initialData = { name: '', timing: '', target: '', range: '', effect: '', note: '' }) {
     const skillDiv = document.createElement('div');
     skillDiv.className = 'skill-item';
     skillDiv.innerHTML = `
@@ -44,6 +44,10 @@ function addSkill(initialData = { name: '', timing: '', target: '', range: '', e
             </div>
             <div class="skill-item-flavor">
                 <div class="form-group">
+                    <label>備考（任意）</label>
+                    <input type="text" class="s-note" value="${initialData.note || ''}">
+                </div>
+                <div class="form-group">
                     <label>フレーバーテキスト（任意）</label>
                     <input type="text" class="s-flavor">
                 </div>
@@ -54,7 +58,14 @@ function addSkill(initialData = { name: '', timing: '', target: '', range: '', e
 }
 
 // 初期表示
-addSkill({ name: '通常移動', timing: 'ムーブ', target: '自身', range: '0', effect: '指定したマスまで移動する。' });
+addSkill({
+    name: '通常移動',
+    timing: 'ムーブ',
+    target: '自身',
+    range: '0',
+    effect: '指定したマスまで移動する。',
+    note: '移動力を参照',
+});
 for (let i = 0; i < 3; i++) addSkill();
 
 function exportToTxt() {
@@ -74,6 +85,7 @@ function exportToTxt() {
         const sTarget = skill.querySelector('.s-target').value;
         const sRange = skill.querySelector('.s-range').value;
         const sEffect = skill.querySelector('.s-effect').value;
+        const sNote = skill.querySelector('.s-note')?.value || "";
         const sFlavor = skill.querySelector('.s-flavor').value;
 
         textContent += `[スキル ${index + 1}]\n`;
@@ -82,6 +94,7 @@ function exportToTxt() {
         textContent += `対象：${sTarget}\n`;
         textContent += `射程：${sRange}\n`;
         textContent += `効果：${sEffect}\n`;
+        if (sNote) textContent += `備考：${sNote}\n`;
         if (sFlavor) textContent += `フレーバー：${sFlavor}\n`;
         textContent += `\n`;
     });
