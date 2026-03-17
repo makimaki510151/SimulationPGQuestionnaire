@@ -30,10 +30,19 @@ function addSkill(initialData = { name: '', timing: '', target: '', range: '', e
                     <option value="自身以外の味方1人" ${initialData.target === '自身以外の味方1人' ? 'selected' : ''}>自身以外の味方1人</option>
                     <option value="敵全体" ${initialData.target === '敵全体' ? 'selected' : ''}>敵全体</option>
                     <option value="敵単体" ${initialData.target === '敵単体' ? 'selected' : ''}>敵単体</option>
+                    <option value="その他" ${initialData.target === 'その他' ? 'selected' : ''}>その他（備考に詳細を記入）</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>射程</label>
+                <label>
+                    <span class="field-label-with-info">
+                        射程
+                        <span class="info-icon" tabindex="0"
+                              data-tooltip="基本はマス数で入力してください。射程が地形依存・方向指定など特殊な場合は、備考にできるだけ具体的に記入してください。">
+                            i
+                        </span>
+                    </span>
+                </label>
                 <input type="number" class="s-range" value="${initialData.range}" min="0">
             </div>
         </div>
