@@ -1,0 +1,212 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px 40px;
+    color: #333;
+    background: #f5f7fb;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 18px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.section-title small {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #fafafa;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.btn {
+    padding: 8px 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.remove-btn {
+    background-color: transparent;
+    color: #dc3545;
+    border-radius: 999px;
+    border: 1px solid rgba(220, 53, 69, 0.5);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+}
+
+.txt-btn {
+    background-color: #007bff;
+    color: white;
+    width: 260px;
+    font-size: 1.05em;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.timing-info {
+    background: #eef4ff;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border-left: 3px solid #5078ff;
+}
+
+.skills-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skills-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.8fr;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #666;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #f1f3f9;
+}
+
+.skills-header span {
+    font-weight: 600;
+}
+
+.skill-item {
+    background: #fdfdff;
+    padding: 14px 14px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #dde2f2;
+    position: relative;
+}
+
+.skill-item-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.8fr;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.skill-item-main .form-group {
+    margin-bottom: 0;
+}
+
+.skill-item-detail {
+    display: grid;
+    grid-template-columns: 2fr 1.4fr;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.skill-item-detail .form-group {
+    margin-bottom: 0;
+}
+
+.skill-item-flavor {
+    margin-top: 8px;
+}
+
+.skill-item-flavor .form-group {
+    margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+    .skills-header {
+        display: none;
+    }
+
+    .skill-item-main {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-item-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キャラクター性能アンケート</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>キャラクター性能アンケート</h1>
+    </header>
+
+    <main>
+        <form id="surveyForm">
+            <section class="section" aria-labelledby="basic-info-title">
+                <div class="section-title">
+                    <h2 id="basic-info-title">基本情報</h2>
+                    <small>キャラクターの概要を入力してください</small>
+                </div>
+                <div class="form-group">
+                    <label for="char_name">名前</label>
+                    <input type="text" id="char_name" placeholder="キャラクター名を入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="role">ロール</label>
+                    <input type="text" id="role" placeholder="（例：前衛アタッカー、壁役、後方支援など）">
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="skill-section-title">
+                <div class="section-title">
+                    <h2 id="skill-section-title">スキル設定</h2>
+                    <small>スキルごとの性能・演出を整理します</small>
+                </div>
+
+                <div class="timing-info">
+                    <strong>使用タイミングについて：</strong><br>
+                    基本順序：ムーブ → マイナー → メジャー<br>
+                    インスタンス：上記3つのどこにでも挟み込めます。<br>
+                    ※「どれか」を選択した場合、運営側で最も適切と思われる枠に割り振ります。
+                </div>
+                <p class="note">※スキルは最大8つ程度を目安にしてください。多すぎる場合は調整（削減）させていただく可能性があります。</p>
+
+                <div class="skills-layout">
+                    <div class="skills-header">
+                        <span>スキル名</span>
+                        <span>タイミング</span>
+                        <span>対象</span>
+                        <span>射程</span>
+                    </div>
+
+                    <div id="skillContainer"></div>
+
+                    <button type="button" class="btn add-btn" onclick="addSkill()">
+                        <span>＋</span><span>スキルを追加する</span>
+                    </button>
+                </div>
+            </section>
+
+            <footer>
+                <button type="button" class="btn txt-btn" onclick="exportToTxt()">.txt出力（保存）</button>
+            </footer>
+        </form>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
